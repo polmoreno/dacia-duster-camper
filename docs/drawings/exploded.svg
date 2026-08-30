@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800mm" height="1200mm"
+     viewBox="0 0 1800 1200">
+  <title>Exploded assembly</title>
+  <style>
+    .cut { fill: none; stroke: #111; stroke-width: 0.4; }
+    .cut-inner { fill: none; stroke: #111; stroke-width: 0.4; }
+    .engrave { fill: none; stroke: #888; stroke-width: 0.2; }
+    .dim { fill: #333; font: 12px sans-serif; }
+    .title { fill: #111; font: 22px sans-serif; }
+    .note { fill: #444; font: 11px sans-serif; }
+    .fill-box { fill: #d8c7a1; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-deck { fill: #c9b48a; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-wing { fill: #b9d4c0; stroke: #2f5d3a; stroke-width: 0.8; }
+    .fill-frame { fill: #9aa7b5; stroke: #2c3a4a; stroke-width: 0.8; }
+    .car { fill: none; stroke: #666; stroke-width: 1.2; stroke-dasharray: 8 4; }
+    .sheet { fill: #f4f1ea; stroke: #333; stroke-width: 1; }
+  </style>
+  <text x="24" y="36" class="title">Exploded assembly — 15 mm plywood  ·  v0.1</text>
+  <rect x="80" y="80" width="322" height="269.5" class="fill-box"/>
+  <text x="80" y="72" class="dim">BOTTOM</text>
+  <rect x="80" y="380" width="280" height="112" class="fill-box"/>
+  <text x="80" y="372" class="dim">SIDE_L / SIDE_R</text>
+  <rect x="420" y="80" width="322" height="106.75" class="fill-box"/>
+  <text x="420" y="72" class="dim">FRONT</text>
+  <rect x="420" y="280" width="322" height="56" class="fill-box"/>
+  <text x="420" y="272" class="dim">RAIL_TOP</text>
+  <rect x="420" y="360" width="322" height="40" class="fill-box"/>
+  <text x="420" y="352" class="dim">RAIL_BOT</text>
+  <rect x="420" y="440" width="321.3" height="69.3" class="fill-deck"/>
+  <text x="420" y="432" class="dim">TABLE</text>
+  <rect x="800" y="80" width="266" height="224" class="fill-deck"/>
+  <text x="800" y="72" class="dim">DECK_P1</text>
+  <rect x="800" y="340" width="266" height="153.72" class="fill-deck"/>
+  <text x="800" y="332" class="dim">DECK_P2</text>
+  <rect x="800" y="540" width="266" height="153.72" class="fill-deck"/>
+  <text x="800" y="532" class="dim">DECK_P3</text>
+  <rect x="800" y="740" width="140" height="153.72" class="fill-wing"/>
+  <text x="800" y="732" class="dim">WING x2</text>
+  <rect x="1200" y="80" width="192.5" height="48" class="fill-frame"/>
+  <text x="1200" y="72" class="dim">RAIL_SEG x4</text>
+  <rect x="1200" y="180" width="257.04" height="48" class="fill-frame"/>
+  <text x="1200" y="172" class="dim">SLAT x2</text>
+  <rect x="1200" y="280" width="48" height="106.75" class="fill-frame"/>
+  <text x="1200" y="272" class="dim">LEG x2</text>
+  <rect x="1200" y="480" width="48" height="40" class="fill-frame"/>
+  <text x="1200" y="472" class="dim">SEAT_REST x2</text>
+  <text x="24" y="1140" class="note">Joinery: glue + 4x40 screws + 40 mm corner brackets. Piano hinges on deck and table. Frame hinges on rail segments and legs.</text>
+</svg>

@@ -1,0 +1,18 @@
+name,qty,width_mm,height_mm,thickness_mm,group,notes
+SIDE_L,1,800.0,320.0,15,box,Left side. Four strap slots to factory tie-downs.
+SIDE_R,1,800.0,320.0,15,box,Right side. Same as SIDE_L (box is symmetric).
+BOTTOM,1,920.0,770.0,15,box,Sits between the sides. Glue and screw into 20x20 cleats.
+FRONT,1,920.0,305.0,15,box,Cabin-facing wall. Top edge is the landing for deck P1.
+RAIL_TOP,1,920.0,70.0,15,box,Tailgate-end top rail. Piano hinge for TABLE and for P1.
+RAIL_BOT,1,920.0,50.0,15,box,Tailgate-end bottom rail. Closes the storage opening.
+TABLE,1,918.0,198.0,15,box,Picnic flap; 15 kg max. Finger slot. Two folding stays.
+DECK_P1,1,950.0,800.0,15,deck,Box lid / first deck section. Hinge to RAIL_TOP.
+DECK_P2,1,950.0,549.0,15,deck,Middle section (rear-door bay). Wing tracks on the underside.
+DECK_P3,1,950.0,549.0,15,deck,Front section (toward the front seats).
+WING,2,175.0,549.0,15,deck,Slide-out shoulder wings. One left; one right; under P2.
+WING_RUNNER,4,549.0,20.0,15,deck,Pair of 20 mm guides per wing; screwed under P2.
+RAIL_SEG,4,550.0,80.0,15,frame,Two hinged segments per side. Piano hinge between A/B.
+SLAT,2,918.0,80.0,15,frame,Width-ways braces. Drop into U-sockets on the rails.
+LEG,2,80.0,305.0,15,frame,Folding front legs. Hinge to the free end of RAIL_SEG B.
+SEAT_REST,2,80.0,50.0,15,frame,Short blocks under the rails where they meet the seatbacks.
+SLAT_SOCKET,4,40.0,90.0,15,frame,U-shaped catch. Screw to the inside of the rails. Or use steel U-brackets.

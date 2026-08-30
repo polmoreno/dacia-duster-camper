@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2440mm" height="1220mm"
+     viewBox="0 0 2440 1220">
+  <title>Duster II Sleep Pack — sheet 2</title>
+  <style>
+    .cut { fill: none; stroke: #111; stroke-width: 0.4; }
+    .cut-inner { fill: none; stroke: #111; stroke-width: 0.4; }
+    .engrave { fill: none; stroke: #888; stroke-width: 0.2; }
+    .dim { fill: #333; font: 12px sans-serif; }
+    .title { fill: #111; font: 22px sans-serif; }
+    .note { fill: #444; font: 11px sans-serif; }
+    .fill-box { fill: #d8c7a1; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-deck { fill: #c9b48a; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-wing { fill: #b9d4c0; stroke: #2f5d3a; stroke-width: 0.8; }
+    .fill-frame { fill: #9aa7b5; stroke: #2c3a4a; stroke-width: 0.8; }
+    .car { fill: none; stroke: #666; stroke-width: 1.2; stroke-dasharray: 8 4; }
+    .sheet { fill: #f4f1ea; stroke: #333; stroke-width: 1; }
+  </style>
+  <rect x="0" y="0" width="2440" height="1220" class="sheet"/>
+  <text x="20" y="28" class="title">Sheet 2/2  —  2440 x 1220 x 15 mm  —  cut: black  —  v0.1</text>
+  <rect x="15" y="15" width="920" height="770" class="cut"/>
+  <text x="21" y="31" class="note">BOTTOM</text>
+  <rect x="947" y="15" width="800" height="320" class="cut"/>
+  <rect x="1027" y="55" width="40" height="8" class="cut-inner"/>
+  <rect x="1627" y="55" width="40" height="8" class="cut-inner"/>
+  <rect x="1027" y="287" width="40" height="8" class="cut-inner"/>
+  <rect x="1627" y="287" width="40" height="8" class="cut-inner"/>
+  <text x="953" y="31" class="note">SIDE_L</text>
+  <rect x="947" y="347" width="800" height="320" class="cut"/>
+  <rect x="1027" y="387" width="40" height="8" class="cut-inner"/>
+  <rect x="1627" y="387" width="40" height="8" class="cut-inner"/>
+  <rect x="1027" y="619" width="40" height="8" class="cut-inner"/>
+  <rect x="1627" y="619" width="40" height="8" class="cut-inner"/>
+  <text x="953" y="363" class="note">SIDE_R</text>
+  <rect x="1759" y="15" width="550" height="80" class="cut"/>
+  <text x="1765" y="31" class="note">RAIL_SEG_1</text>
+  <rect x="1759" y="107" width="550" height="80" class="cut"/>
+  <text x="1765" y="123" class="note">RAIL_SEG_2</text>
+  <rect x="1759" y="199" width="550" height="80" class="cut"/>
+  <text x="1765" y="215" class="note">RAIL_SEG_3</text>
+  <rect x="1759" y="291" width="550" height="80" class="cut"/>
+  <text x="1765" y="307" class="note">RAIL_SEG_4</text>
+  <rect x="1759" y="383" width="175" height="549" class="cut"/>
+  <text x="1765" y="399" class="note">WING_1</text>
+  <rect x="1946" y="383" width="175" height="549" class="cut"/>
+  <text x="1952" y="399" class="note">WING_2</text>
+  <rect x="947" y="679" width="549" height="20" class="cut"/>
+  <text x="953" y="695" class="note">WING_RUNNER_3</text>
+  <rect x="947" y="711" width="549" height="20" class="cut"/>
+  <text x="953" y="727" class="note">WING_RUNNER_4</text>
+</svg>

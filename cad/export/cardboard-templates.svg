@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400mm" height="3370mm"
+     viewBox="0 0 1400 3370">
+  <title>Cardboard templates — tape these in the Duster before cutting plywood</title>
+  <style>
+    .cut { fill: none; stroke: #111; stroke-width: 0.4; }
+    .cut-inner { fill: none; stroke: #111; stroke-width: 0.4; }
+    .engrave { fill: none; stroke: #888; stroke-width: 0.2; }
+    .dim { fill: #333; font: 12px sans-serif; }
+    .title { fill: #111; font: 22px sans-serif; }
+    .note { fill: #444; font: 11px sans-serif; }
+    .fill-box { fill: #d8c7a1; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-deck { fill: #c9b48a; stroke: #5a4a32; stroke-width: 0.8; }
+    .fill-wing { fill: #b9d4c0; stroke: #2f5d3a; stroke-width: 0.8; }
+    .fill-frame { fill: #9aa7b5; stroke: #2c3a4a; stroke-width: 0.8; }
+    .car { fill: none; stroke: #666; stroke-width: 1.2; stroke-dasharray: 8 4; }
+    .sheet { fill: #f4f1ea; stroke: #333; stroke-width: 1; }
+  </style>
+  <text x="20" y="36" class="title">Cardboard templates — plot at 100% (1 unit = 1 mm). Do not cut plywood until these fit.</text>
+  <text x="20" y="56" class="note">1) Box footprint   2) Bed plan 1900 x 1300   3) Width bars   4) Side profile</text>
+  <rect x="40" y="80" width="950" height="800" class="fill-box"/>
+  <text x="50" y="104" class="dim">BOX FOOTPRINT  950 x 800 mm</text>
+  <text x="50" y="122" class="note">Tape on the boot floor, seats UP. Must clear both arches.</text>
+  <rect x="215" y="930" width="950" height="800" class="fill-box"/>
+  <rect x="215" y="1730" width="950" height="549" class="fill-deck"/>
+  <rect x="215" y="2279" width="950" height="549" class="fill-deck"/>
+  <rect x="40" y="1730" width="175" height="549" class="fill-wing"/>
+  <rect x="1165" y="1730" width="175" height="549" class="fill-wing"/>
+  <text x="225" y="952" class="dim">BED PLAN  1900 x 950 + wings 175 = 1300 mm</text>
+  <text x="225" y="970" class="note">Seats folded, front seats forward. P1 (box) at tailgate, then P2 + wings, then P3.</text>
+  <rect x="40" y="2870" width="950" height="40" class="fill-box"/>
+  <text x="48" y="2896" class="dim">WIDTH BAR BOX  950 mm  (must pass between arches)</text>
+  <rect x="40" y="2930" width="1300" height="40" class="fill-wing"/>
+  <text x="48" y="2956" class="dim">WIDTH BAR WINGS  1300 mm  (rear doors, mattress height)</text>
+  <rect x="40" y="3000" width="800" height="320" class="fill-box"/>
+  <rect x="40" y="3000" width="800" height="8" class="fill-deck"/>
+  <rect x="840" y="3000" width="1100" height="8" class="fill-deck"/>
+  <text x="40" y="2988" class="dim">SIDE PROFILE  box 800 x 320  + deck 1900</text>
+</svg>
