@@ -1,0 +1,14 @@
+---
+description: Commit and push to origin after every change
+alwaysApply: true
+---
+
+# Always push
+
+When you finish a change the user can see on the site or in the repo:
+
+1. Create a git commit (do not wait for "commit" or "puja").
+2. Push to `origin` on the current branch (`git push origin HEAD`).
+3. Tell the user the commit and that Pages will update.
+
+Do not force-push. Do not skip hooks. Do not change git config.
