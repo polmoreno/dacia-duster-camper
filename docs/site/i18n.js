@@ -26,7 +26,7 @@ window.I18N = {
     heroCtaBuy: "Shopping list",
 
     cutDraw: "Drawing",
-    cutLook: "Looks like this",
+    cutLook: "The wood",
     modeDriveT: "Drive",
     modeDriveD: "Box in the boot. Five seats. Strap it to the factory hooks. Shelf back on if it fits.",
     modePicnicT: "Picnic",
@@ -137,10 +137,10 @@ window.I18N = {
     buyDone: "ticked",
 
     cutH: "Every plywood piece — say these sizes out loud",
-    cutP: "All 15 mm thick. Qty × width × height. Next to each drawing is a hardware-store photo of that kind of part — not this kit. The shop can also cut from the two nest drawings (sheet-1 and sheet-2).",
+    cutP: "Same wood for every piece: 15 mm birch plywood, two sheets. Qty × width × height. The photo is that sheet. The shop can also cut from the two nest drawings (sheet-1 and sheet-2).",
     cutOpen: "Open the drawing with all parts",
     cutSheet: "Open the two nest sheets (what the saw should follow)",
-    cutCredit: "Example photos: Wikimedia Commons (Bystander; Rotor DB; Downtowngal; Yu Morita; Andy Li; Fructibus; Sarang; Mendaliv).",
+    cutCredit: "15 mm birch plywood photo: Wikimedia Commons / Bystander, CC BY-SA 3.0.",
     cutGroupBox: "The box",
     cutGroupDeck: "The bed lids",
     cutGroupFrame: "The rails and legs",
@@ -225,7 +225,7 @@ window.I18N = {
     heroCtaBuy: "Llista de la compra",
 
     cutDraw: "Plànol",
-    cutLook: "Així es veu",
+    cutLook: "La fusta",
     modeDriveT: "Conduir",
     modeDriveD: "Caixa al maleter. Cinc seients. Cintes als ganxos de fàbrica. Safata al seu lloc si hi cap.",
     modePicnicT: "Pícnic",
@@ -336,10 +336,10 @@ window.I18N = {
     buyDone: "fet",
 
     cutH: "Totes les peces de contraplacat — digues les mides en veu alta",
-    cutP: "Totes de 15 mm de gruix. Quantitat × ample × alt. Al costat de cada plànol hi ha una foto de ferreteria d’aquest tipus de peça — no d’aquest kit. El taller també pot tallar a partir dels dos plànols (sheet-1 i sheet-2).",
+    cutP: "La mateixa fusta a totes les peces: contraplacat de bedoll de 15 mm, dues planxes. Quantitat × ample × alt. La foto és aquesta planxa. El taller també pot tallar a partir dels dos plànols (sheet-1 i sheet-2).",
     cutOpen: "Obre el dibuix amb totes les peces",
     cutSheet: "Obre els dos plànols de niu (el que ha de seguir el serra)",
-    cutCredit: "Fotos d’exemple: Wikimedia Commons (Bystander; Rotor DB; Downtowngal; Yu Morita; Andy Li; Fructibus; Sarang; Mendaliv).",
+    cutCredit: "Foto del contraplacat de bedoll 15 mm: Wikimedia Commons / Bystander, CC BY-SA 3.0.",
     cutGroupBox: "La caixa",
     cutGroupDeck: "Les tapes del llit",
     cutGroupFrame: "Rails i potes",

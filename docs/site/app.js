@@ -154,25 +154,7 @@
     return { fill: "#d8c09a", stroke: "#5a4030", grain: "#b8956a" };
   }
 
-  const REF_PHOTO = {
-    SIDE_L: "plywood-panels.jpg",
-    SIDE_R: "plywood-panels.jpg",
-    BOTTOM: "plywood-birch.jpg",
-    FRONT: "plywood-close.jpg",
-    RAIL_TOP: "plywood-birch.jpg",
-    RAIL_BOT: "plywood-birch.jpg",
-    TABLE: "plywood-close.jpg",
-    DECK_P1: "plywood-panels.jpg",
-    DECK_P2: "plywood-panels.jpg",
-    DECK_P3: "plywood-panels.jpg",
-    WING: "plywood-birch.jpg",
-    WING_RUNNER: "drawer-slide.jpg",
-    RAIL_SEG: "plywood-birch.jpg",
-    SLAT: "bed-slats.jpg",
-    LEG: "table-legs.jpg",
-    SEAT_REST: "wood-block.jpg",
-    SLAT_SOCKET: "joist-hanger.jpg",
-  };
+  const REF_PHOTO = "plywood-birch.jpg";
 
   function partSvg(p) {
     const VW = 300;
@@ -247,7 +229,7 @@
       box.innerHTML = "<h3>" + g.title + "</h3><div class='cut-grid'></div>";
       const grid = box.querySelector(".cut-grid");
       window.PARTS.filter((p) => p.g === g.id).forEach((p) => {
-        const photo = REF_PHOTO[p.id] || "plywood-birch.jpg";
+        const photo = REF_PHOTO;
         const card = document.createElement("article");
         card.className = "cut-card " + p.g + (p.feat === "wing" ? " wing" : "");
         card.innerHTML =
