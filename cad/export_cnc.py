@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 
 from cad import params as P
 from cad.io_dxf import add_circle, add_rect, begin, end
-from cad.io_svg import circle, line, polyline, rect, svg_footer, svg_header, text
+from cad.io_svg import circle, dim_h, dim_v, line, polyline, rect, svg_footer, svg_header, text
 from cad.parts import Part, all_parts, expanded_parts, plywood_area_m2
 
 EXPORT = ROOT / "cad" / "export"
@@ -336,6 +336,117 @@ def write_exploded() -> None:
     (DRAW / "exploded.svg").write_text("\n".join(svg), encoding="utf-8")
 
 
+# ---------------------------------------------------------------------------
+# All parts on one sheet, with millimetre sizes (outlines at 1:4)
+# ---------------------------------------------------------------------------
+
+_PARTS_SCALE = 0.25
+_PARTS_PAGE_W = 2000
+_LABEL_H = 36
+_DIM_LEFT = 36
+_DIM_BELOW = 22
+_PART_GAP_X = 56
+_PART_GAP_Y = 48
+
+
+def _fill_for(p: Part) -> str:
+    if p.name.startswith("WING"):
+        return "fill-wing"
+    return {"box": "fill-box", "deck": "fill-deck", "frame": "fill-frame"}[p.group]
+
+
+def _draw_sized_part(svg: list[str], p: Part, x: float, y: float) -> tuple[float, float]:
+    """Draw one unique part at _PARTS_SCALE with name, qty, and W×H dims.
+
+    (x, y) is the top-left of the plywood rectangle. Returns (block_w, block_h)
+    including label and dimension space.
+    """
+    dw, dh = p.w * _PARTS_SCALE, p.h * _PARTS_SCALE
+    svg.append(rect(x, y, dw, dh, _fill_for(p)))
+    for hole in p.holes:
+        hx = x + hole.x * _PARTS_SCALE
+        hy = y + hole.y * _PARTS_SCALE
+        if hole.kind == "circle":
+            svg.append(circle(hx, hy, hole.w * _PARTS_SCALE))
+        else:
+            svg.append(rect(hx, hy, hole.w * _PARTS_SCALE, hole.h * _PARTS_SCALE, "cut-inner"))
+
+    qty = f"×{p.qty}" if p.qty > 1 else "×1"
+    size = f"{p.w:g} × {p.h:g} × {p.thickness:g} mm"
+    svg.append(text(x, y - 16, f"{p.name}  {qty}", "part-name"))
+    svg.append(text(x, y - 2, size, "size"))
+    svg.extend(dim_h(x, y + dh + 12, dw, p.w))
+    svg.extend(dim_v(x - 14, y, dh, p.h))
+    return dw + _DIM_LEFT, dh + _LABEL_H + _DIM_BELOW
+
+
+def write_all_parts() -> None:
+    """One SVG: every unique plywood part, quantity, and size in millimetres."""
+    groups = ("box", "deck", "frame")
+    titles = {"box": "Box", "deck": "Deck + wings", "frame": "Concertina frame"}
+    by_group: dict[str, list[Part]] = {g: [] for g in groups}
+    for p in all_parts():
+        by_group[p.group].append(p)
+    for g in groups:
+        by_group[g].sort(key=lambda p: p.w * p.h, reverse=True)
+
+    # Pack first so the canvas height matches the content.
+    margin_x, y = 56, 100
+    max_x = margin_x
+    placements: list[tuple[str | Part, float, float]] = []  # header str or part
+
+    for group in groups:
+        placements.append((titles[group], margin_x, y))
+        y += 28
+        x = margin_x
+        row_h = 0
+        for p in by_group[group]:
+            dw, dh = p.w * _PARTS_SCALE, p.h * _PARTS_SCALE
+            block_w = dw + _DIM_LEFT
+            block_h = dh + _LABEL_H + _DIM_BELOW
+            if x > margin_x and x + block_w > _PARTS_PAGE_W - 40:
+                x = margin_x
+                y += row_h + _PART_GAP_Y
+                row_h = 0
+            placements.append((p, x + _DIM_LEFT, y + _LABEL_H))
+            max_x = max(max_x, x + block_w)
+            x += block_w + _PART_GAP_X
+            row_h = max(row_h, block_h)
+        y += row_h + 36
+
+    page_h = y + 24
+    page_w = max(_PARTS_PAGE_W, max_x + 40)
+    area = plywood_area_m2()
+    n = sum(p.qty for p in all_parts())
+
+    svg = svg_header(page_w, page_h, "All plywood parts — sizes in millimetres")
+    svg.append(text(24, 32, "All plywood parts — Duster II Sleep Pack  ·  v0.1", "title"))
+    svg.append(
+        text(
+            24,
+            54,
+            f"{P.PLY} mm plywood  ·  {n} pieces  ·  net {area:.2f} m²  ·  "
+            f"2 sheets {P.SHEET_W:g} × {P.SHEET_H:g}  ·  outlines 1:4  ·  labels are real mm",
+            "note",
+        )
+    )
+    svg.append(text(24, 72, "Plot or view at any zoom. Cut from sheet-1.svg / sheet-2.svg (1:1).", "note"))
+
+    # Scale bar: 400 mm real → 100 user units at 1:4
+    bar_x, bar_y = page_w - 180, 56
+    svg.append(rect(bar_x, bar_y, 400 * _PARTS_SCALE, 8, "fill-box"))
+    svg.append(text(bar_x, bar_y - 6, "400 mm at 1:4", "note"))
+
+    for item, x, y in placements:
+        if isinstance(item, str):
+            svg.append(text(24, y, item, "section"))
+        else:
+            _draw_sized_part(svg, item, x, y)
+
+    svg.extend(svg_footer())
+    (EXPORT / "all-parts.svg").write_text("\n".join(svg), encoding="utf-8")
+
+
 def write_cutlist_csv() -> None:
     rows = ["name,qty,width_mm,height_mm,thickness_mm,group,notes"]
     for p in all_parts():
@@ -351,6 +462,7 @@ def main() -> None:
     write_nests(sheets)
     write_parts_index()
     write_cutlist_csv()
+    write_all_parts()
     write_cardboard()
     write_folded()
     write_unfolded()

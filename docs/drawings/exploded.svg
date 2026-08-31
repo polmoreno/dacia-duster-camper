@@ -7,6 +7,10 @@
     .cut-inner { fill: none; stroke: #111; stroke-width: 0.4; }
     .engrave { fill: none; stroke: #888; stroke-width: 0.2; }
     .dim { fill: #333; font: 12px sans-serif; }
+    .dim-line { fill: none; stroke: #444; stroke-width: 0.5; }
+    .part-name { fill: #111; font: 15px sans-serif; }
+    .size { fill: #222; font: 13px sans-serif; }
+    .section { fill: #111; font: 18px sans-serif; }
     .title { fill: #111; font: 22px sans-serif; }
     .note { fill: #444; font: 11px sans-serif; }
     .fill-box { fill: #d8c7a1; stroke: #5a4a32; stroke-width: 0.8; }

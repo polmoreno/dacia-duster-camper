@@ -13,6 +13,7 @@ The factory SKU ([7717274284](https://www.dacia.es/accesorios-dacia/catalogo/det
 3. Plot [cad/export/cardboard-templates.svg](cad/export/cardboard-templates.svg) at 100% and tape it in the Duster.
 4. Cut two 2440 × 1220 × 15 mm sheets from [cad/export/sheet-1.svg](cad/export/sheet-1.svg) / [sheet-2.svg](cad/export/sheet-2.svg) (DXF next to them).
 5. Build and deploy with [docs/build-guide.md](docs/build-guide.md). Hardware: [hardware/bom.md](hardware/bom.md).
+6. Watch the 3D assemble / fold / sleep animation in [docs/viewer/](docs/viewer/index.html).
 
 ## Repo map
 
@@ -22,6 +23,7 @@ The factory SKU ([7717274284](https://www.dacia.es/accesorios-dacia/catalogo/det
 | [docs/vehicle.md](docs/vehicle.md) | Published dims + tape-measure checklist (including 130 cm wings) |
 | [docs/build-guide.md](docs/build-guide.md) | Cut, assemble, strap, official 9-step unfold, safety |
 | [docs/drawings/](docs/drawings/) | Folded, unfolded, exploded SVG |
+| [docs/viewer/](docs/viewer/index.html) | 3D animation: kit → folded box → picnic / sleep |
 | [cad/params.py](cad/params.py) | All millimetre variables |
 | [cad/sleep_pack.scad](cad/sleep_pack.scad) | OpenSCAD preview (`unfolded = true`) |
 | [cad/export/](cad/export/) | Nested SVG + DXF, cut list, cardboard templates |

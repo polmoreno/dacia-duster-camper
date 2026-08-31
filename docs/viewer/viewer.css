@@ -1,0 +1,248 @@
+:root {
+  --bg: #14110e;
+  --ink: #f3ead8;
+  --mute: #b7aa94;
+  --wood: #c9b48a;
+  --line: rgba(243, 234, 216, 0.16);
+  --panel: rgba(20, 17, 14, 0.72);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.45 "Segoe UI", system-ui, sans-serif;
+}
+
+#app, #view {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#labels {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(20, 17, 14, 0.78);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.hud {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  z-index: 2;
+}
+
+.brand {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wood);
+}
+
+.meta {
+  margin: 4px 0 0;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.caption {
+  position: fixed;
+  top: 22px;
+  right: 24px;
+  width: min(380px, calc(100vw - 48px));
+  padding: 16px 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: var(--wood);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.caption h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.caption p:last-child {
+  margin: 0;
+  color: var(--mute);
+}
+
+.hint {
+  position: fixed;
+  left: 50%;
+  bottom: 118px;
+  transform: translateX(-50%);
+  color: var(--mute);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: min(920px, calc(100vw - 24px));
+  padding: 12px 14px 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  z-index: 3;
+}
+
+.modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.modes button,
+.transport button,
+.ghost {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.modes button.active,
+.transport button#play {
+  background: var(--wood);
+  color: #1a1612;
+  border-color: transparent;
+}
+
+.transport button#play.is-playing {
+  background: var(--ink);
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transport button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.icon-pause { display: none; }
+#play.is-playing .icon-play { display: none; }
+#play.is-playing .icon-pause { display: block; }
+
+.scrub-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 80px;
+}
+
+#scrub {
+  width: 100%;
+  accent-color: var(--wood);
+}
+
+.ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+  height: 4px;
+  pointer-events: none;
+}
+
+.ticks i {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 4px;
+  background: rgba(243, 234, 216, 0.35);
+}
+
+#clock {
+  width: 42px;
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--mute);
+  font-size: 12px;
+  user-select: none;
+}
+
+#fail {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 24px;
+  z-index: 10;
+  background: var(--bg);
+}
+
+#fail[hidden] { display: none; }
+
+code {
+  color: var(--wood);
+}
+
+@media (max-width: 720px) {
+  .caption { top: auto; bottom: 168px; right: 12px; left: 12px; width: auto; }
+  .hud { left: 12px; top: 12px; }
+  .hint { display: none; }
+  .toggle:last-child { display: none; }
+}
