@@ -35,14 +35,9 @@
   ];
 
   const qLang = new URLSearchParams(location.search).get("lang");
-  let lang = (qLang === "en" || qLang === "ca") ? qLang : (localStorage.getItem(LANG_KEY) || guessLang());
+  let lang = (qLang === "en" || qLang === "ca") ? qLang : (localStorage.getItem(LANG_KEY) || "ca");
   let units = localStorage.getItem(UNIT_KEY) || "mm";
   let state = loadState();
-
-  function guessLang() {
-    const n = (navigator.language || "en").toLowerCase();
-    return n.startsWith("ca") ? "ca" : "en";
-  }
 
   function t(key) {
     const pack = window.I18N[lang] || window.I18N.en;

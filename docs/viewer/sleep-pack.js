@@ -61,7 +61,7 @@
 
   function viewerLang() {
     const q = new URLSearchParams(location.search).get("lang");
-    return q || localStorage.getItem("duster-lang") || "en";
+    return q || localStorage.getItem("duster-lang") || "ca";
   }
 
   function applyViewerCopy() {
