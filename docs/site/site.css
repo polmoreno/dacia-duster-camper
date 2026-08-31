@@ -343,8 +343,10 @@ h3 { font-size: 22px; margin: 0 0 8px; }
 }
 
 .shop-item input { width: 22px; height: 22px; }
-.shop-item.done span:nth-child(2) { text-decoration: line-through; color: var(--mute); }
+.shop-item.done span:nth-child(2),
+.shop-item.done .shop-link { text-decoration: line-through; color: var(--mute); }
 .shop-item .qty { font-weight: 700; white-space: nowrap; }
+.shop-link { color: var(--wood); font-weight: 600; }
 
 .total { font-size: 20px; }
 

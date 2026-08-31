@@ -6,24 +6,22 @@
   const SHOP = [
     { g: "buyWood", items: [
       { id: "ply", t: "buyPly", n: "buyPlyN" },
-      { id: "band", t: "buyBand", n: "buyBandN" },
+      { id: "band", t: "buyBand", n: "buyBandN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/cantos-para-tablero" },
       { id: "felt", t: "buyFelt", n: "buyFeltN" },
       { id: "cleat", t: "buyCleat", n: "buyCleatN" },
     ]},
     { g: "buyHw", items: [
-      { id: "h1", t: "buyHinge1", n: "buyHinge1N" },
-      { id: "h2", t: "buyHinge2", n: "buyHinge2N" },
-      { id: "h3", t: "buyHinge3", n: "buyHinge3N" },
-      { id: "butt", t: "buyButt", n: "buyButtN" },
+      { id: "h1", t: "buyHinge1", n: "buyHinge1N", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras-de-piano" },
+      { id: "butt", t: "buyButt", n: "buyButtN", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras" },
       { id: "stay", t: "buyStay", n: "buyStayN" },
-      { id: "bolt", t: "buyBolt", n: "buyBoltN" },
-      { id: "slide", t: "buySlide", n: "buySlideN" },
+      { id: "bolt", t: "buyBolt", n: "buyBoltN", url: "https://www.cadena88.com/es/cerrajeria/pasadores-candados-y-cierrapuertas/pasadores-y-pestillos-para-puertas/pasadores-y-pestillos" },
+      { id: "slide", t: "buySlide", n: "buySlideN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/complementos-para-muebles/guia-metalica-eurolaton-cajones" },
     ]},
     { g: "buyFast", items: [
-      { id: "s1", t: "buyScr1", n: "buyScr1N" },
-      { id: "s2", t: "buyScr2", n: "buyScr2N" },
-      { id: "br", t: "buyBrkt", n: "buyBrktN" },
-      { id: "glue", t: "buyGlue", n: "buyGlueN" },
+      { id: "s1", t: "buyScr1", n: "buyScr1N", url: "https://www.cadena88.com/es/marcas/spax" },
+      { id: "s2", t: "buyScr2", n: "buyScr2N", url: "https://www.cadena88.com/es/marcas/spax" },
+      { id: "br", t: "buyBrkt", n: "buyBrktN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/pletinas-y-escuadras-de-ensamblaje" },
+      { id: "glue", t: "buyGlue", n: "buyGlueN", url: "https://www.cadena88.com/es/fijaciones-y-adhesivos/adhesivos-colas-y-cintas/colas-blancas" },
     ]},
     { g: "buySoft", items: [
       { id: "st", t: "buyStrap", n: "buyStrapN" },
@@ -130,9 +128,12 @@
         if (ticked[it.id]) done += 1;
         const row = document.createElement("label");
         row.className = "shop-item" + (ticked[it.id] ? " done" : "");
+        const name = it.url
+          ? "<a class='shop-link' href='" + it.url + "' target='_blank' rel='noopener'>" + t(it.t) + "</a>"
+          : "<span>" + t(it.t) + "</span>";
         row.innerHTML =
           "<input type='checkbox'" + (ticked[it.id] ? " checked" : "") + " />" +
-          "<span>" + t(it.t) + "</span>" +
+          name +
           "<span class='qty'>" + t(it.n) + "</span>";
         row.querySelector("input").addEventListener("change", (e) => {
           ticked[it.id] = e.target.checked;
@@ -140,6 +141,8 @@
           saveState();
           renderShop();
         });
+        const link = row.querySelector(".shop-link");
+        if (link) link.addEventListener("click", (e) => e.stopPropagation());
         wrap.appendChild(row);
       });
       host.appendChild(wrap);
