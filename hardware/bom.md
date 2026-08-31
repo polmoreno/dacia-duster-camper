@@ -12,7 +12,8 @@ Prices are Spain / EU hardware-store ballparks (Leroy Merlin, Bauhaus, Amazon). 
 
 Cut list: [`cad/export/cutlist.csv`](../cad/export/cutlist.csv) and [`cad/export/parts.md`](../cad/export/parts.md). Net area 4.23 m²; two sheets are 5.95 m².
 
-Optional instead of plywood slat sockets: four steel 40 × 40 × 80 mm U-brackets.
+Optional instead of plywood slat sockets: four steel 40 × 40 × 80 mm U-brackets.  
+Optional instead of plywood `WING_RUNNER` strips: two pairs of 550 mm drawer slides under P2.
 
 ## Timber (not CNC)
 

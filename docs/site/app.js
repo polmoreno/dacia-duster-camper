@@ -17,6 +17,7 @@
       { id: "butt", t: "buyButt", n: "buyButtN" },
       { id: "stay", t: "buyStay", n: "buyStayN" },
       { id: "bolt", t: "buyBolt", n: "buyBoltN" },
+      { id: "slide", t: "buySlide", n: "buySlideN" },
     ]},
     { g: "buyFast", items: [
       { id: "s1", t: "buyScr1", n: "buyScr1N" },
@@ -154,9 +155,10 @@
     return { fill: "#d8c09a", stroke: "#5a4030", grain: "#b8956a" };
   }
 
-  const REF_PHOTO = {
-    wood: "plywood-birch.jpg",
-    SLAT_SOCKET: "joist-hanger.jpg",
+  const REF = {
+    wood: { file: "plywood-birch.jpg", cap: "cutLook" },
+    runner: { file: "drawer-slide.jpg", cap: "cutLookRunner", size: "cutRunnerSize" },
+    steel: { file: "joist-hanger.jpg", cap: "cutLookSteel", size: "cutSteelSize" },
   };
 
   function partSvg(p) {
@@ -232,8 +234,7 @@
       box.innerHTML = "<h3>" + g.title + "</h3><div class='cut-grid'></div>";
       const grid = box.querySelector(".cut-grid");
       window.PARTS.filter((p) => p.g === g.id).forEach((p) => {
-        const isSteel = p.id === "SLAT_SOCKET";
-        const photo = isSteel ? REF_PHOTO.SLAT_SOCKET : REF_PHOTO.wood;
+        const ref = REF[p.kind] || REF.wood;
         const card = document.createElement("article");
         card.className = "cut-card " + p.g + (p.feat === "wing" ? " wing" : "");
         card.innerHTML =
@@ -243,13 +244,13 @@
           partSvg(p) +
           "</figure>" +
           "<figure class='photo'>" +
-          "<figcaption>" + t(isSteel ? "cutLookSteel" : "cutLook") + "</figcaption>" +
-          "<img src='img/ref/" + photo + "' alt='" + p.id + "' width='640' height='400'/>" +
+          "<figcaption>" + t(ref.cap) + "</figcaption>" +
+          "<img src='img/ref/" + ref.file + "' alt='" + p.id + "' width='640' height='400'/>" +
           "</figure>" +
           "</div>" +
           "<div class='name'>" + p.id + "  ×" + p.qty + "</div>" +
-          "<div class='size'>" + (isSteel
-            ? t("cutSteelSize")
+          "<div class='size'>" + (ref.size
+            ? t(ref.size)
             : fmtLen(p.w) + " × " + fmtLen(p.h) + " × 15 mm") + "</div>" +
           "<div class='note'>" + (lang === "ca" ? p.ca : p.en) + "</div>";
         grid.appendChild(card);
