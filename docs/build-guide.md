@@ -126,6 +126,6 @@ To pack: reverse 9 → 1. Slats back in the box. Straps tight before you drive.
 
 ## 3D preview
 
-Open [`docs/viewer/index.html`](viewer/index.html) in a browser (Play, or jump to **Parts / Folded / Picnic / Sleep**). Serve the repo if the page is blank: `python -m http.server`.
+Open the workshop site [`docs/site/`](site/index.html) (English / Catalan): 3D, tape-measure fit, shopping list, cut list. Full-screen 3D: [`docs/viewer/index.html`](viewer/index.html). Serve the repo if a page is blank: `python -m http.server`.
 
 Open [`cad/sleep_pack.scad`](../cad/sleep_pack.scad) in OpenSCAD. Set `unfolded = true;` to see the bed out.

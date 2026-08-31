@@ -8,6 +8,7 @@ The factory SKU ([7717274284](https://www.dacia.es/accesorios-dacia/catalogo/det
 
 ## Quick start
 
+0. Open the workshop site (English / Catalan): [docs/site/](docs/site/index.html) — parts, tape-measure fit, shopping list, 3D, build steps.
 1. Print and fill [docs/vehicle.md](docs/vehicle.md) in the car.
 2. If your numbers differ from v0.1, edit [cad/params.py](cad/params.py) and run `python cad/export_cnc.py`.
 3. Plot [cad/export/cardboard-templates.svg](cad/export/cardboard-templates.svg) at 100% and tape it in the Duster.
@@ -19,6 +20,7 @@ The factory SKU ([7717274284](https://www.dacia.es/accesorios-dacia/catalogo/det
 
 | Path | What |
 | --- | --- |
+| [docs/site/](docs/site/index.html) | Interactive workshop site (EN / CA) for the hardware-store counter |
 | [docs/research.md](docs/research.md) | Official pack vs Duster II, sources, why 190×130 is still the target |
 | [docs/vehicle.md](docs/vehicle.md) | Published dims + tape-measure checklist (including 130 cm wings) |
 | [docs/build-guide.md](docs/build-guide.md) | Cut, assemble, strap, official 9-step unfold, safety |

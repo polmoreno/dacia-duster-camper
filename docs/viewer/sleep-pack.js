@@ -45,19 +45,46 @@
   };
 
   const CHAPTERS = [
-    { t: 0.0, n: "01", title: "Separated parts", body: "30 pieces of 15 mm plywood. Box, Z-fold deck, wings, and concertina frame — still a kit." },
-    { t: 2.3, n: "02", title: "Box carcass", body: "Sides, cabin wall, and tailgate rails stand up. The 950 mm width has to pass between the wheel arches." },
-    { t: 6.4, n: "03", title: "Bottom in", body: "BOTTOM drops onto 20×20 cleats. Inner storage is 920 × 770 × ~290 mm." },
-    { t: 8.2, n: "04", title: "Picnic table", body: "TABLE hinges on RAIL_TOP and hangs as the rear wall. 15 kg max — do not sit." },
-    { t: 10.0, n: "05", title: "Frame tucks in", body: "Two 550 mm rail segments per side concertina into the box. Legs fold. Slats store on the floor." },
-    { t: 12.4, n: "06", title: "Z-fold lid", body: "P1 is the box lid. P2 and P3 stack on top. Wings stay retracted under P2. Daily driving height ≈ 365 mm." },
-    { t: 15.6, n: "07", title: "Folded — five seats", body: "Strapped to the factory tie-downs. Parcel shelf back if it still clears. This is the modular boot box." },
-    { t: 18.2, n: "08", title: "Pull the frame", body: "Rear seats folded. Rails pull out over the seatbacks. Legs drop onto the floor. Seat-rest blocks find the seatbacks." },
-    { t: 21.6, n: "09", title: "Slot the slats", body: "Two 918 mm braces drop into the U-sockets. The frame has to feel rigid before anyone sleeps on it." },
-    { t: 24.2, n: "10", title: "Unfold the bed", body: "P1 stays on the box. P2 and P3 Z-fold toward the front seats to 1900 mm." },
-    { t: 29.0, n: "11", title: "Wings and picnic", body: "Wings slide 175 mm each — 1300 mm at the rear doors. Open the tailgate and fold the table out." },
-    { t: 33.4, n: "12", title: "Sleep pack", body: "Mattress 950 × 1900, wing pads, footwell pads. Official sleep size, Duster II box." },
+    { t: 0.0, n: "01", title: "Separated parts", body: "" },
+    { t: 2.3, n: "02", title: "Box carcass", body: "" },
+    { t: 6.4, n: "03", title: "Bottom in", body: "" },
+    { t: 8.2, n: "04", title: "Picnic table", body: "" },
+    { t: 10.0, n: "05", title: "Frame tucks in", body: "" },
+    { t: 12.4, n: "06", title: "Z-fold lid", body: "" },
+    { t: 15.6, n: "07", title: "Folded — five seats", body: "" },
+    { t: 18.2, n: "08", title: "Pull the frame", body: "" },
+    { t: 21.6, n: "09", title: "Slot the slats", body: "" },
+    { t: 24.2, n: "10", title: "Unfold the bed", body: "" },
+    { t: 29.0, n: "11", title: "Wings and picnic", body: "" },
+    { t: 33.4, n: "12", title: "Sleep pack", body: "" },
   ];
+
+  function viewerLang() {
+    const q = new URLSearchParams(location.search).get("lang");
+    return q || localStorage.getItem("duster-lang") || "en";
+  }
+
+  function applyViewerCopy() {
+    const pack = (window.VIEWER_I18N && window.VIEWER_I18N[viewerLang()]) || (window.VIEWER_I18N && window.VIEWER_I18N.en);
+    if (!pack) return;
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set("v-brand", pack.brand);
+    set("v-meta", pack.meta);
+    set("hint", pack.hint);
+    set("v-parts", pack.parts);
+    set("v-folded", pack.folded);
+    set("v-picnic", pack.picnic);
+    set("v-sleep", pack.sleep);
+    set("v-labels", pack.labels);
+    set("v-boot", pack.boot);
+    pack.chapters.forEach((c, i) => {
+      if (CHAPTERS[i]) {
+        CHAPTERS[i].title = c.title;
+        CHAPTERS[i].body = c.body;
+      }
+    });
+  }
+  applyViewerCopy();
 
   const ASSEMBLE = [
     "SIDE_L", "SIDE_R", "FRONT", "RAIL_BOT", "RAIL_TOP", "BOTTOM", "TABLE",
@@ -654,7 +681,8 @@
 
   function syncPlay() {
     ui.play.classList.toggle("is-playing", playing);
-    ui.play.setAttribute("aria-label", playing ? "Pause" : "Play");
+    const pack = (window.VIEWER_I18N && window.VIEWER_I18N[viewerLang()]) || {};
+    ui.play.setAttribute("aria-label", playing ? (pack.pause || "Pause") : (pack.play || "Play"));
   }
 
   ui.play.addEventListener("click", () => {

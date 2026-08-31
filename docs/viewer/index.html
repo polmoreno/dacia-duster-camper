@@ -12,8 +12,8 @@
     <div id="labels"></div>
 
     <header class="hud">
-      <p class="brand">Duster II Sleep Pack</p>
-      <p class="meta">v0.1 · 15 mm plywood · 30 pieces · 3-in-1</p>
+      <p class="brand" id="v-brand">Duster II Sleep Pack</p>
+      <p class="meta" id="v-meta">v0.1 · 15 mm plywood · 30 pieces · 3-in-1</p>
     </header>
 
     <aside class="caption" id="caption">
@@ -26,10 +26,10 @@
 
     <footer class="dock">
       <div class="modes" role="tablist" aria-label="Product states">
-        <button type="button" data-jump="0" data-pause="false">Parts</button>
-        <button type="button" data-jump="15.8" data-pause="true">Folded</button>
-        <button type="button" data-jump="31.4" data-pause="true">Picnic</button>
-        <button type="button" data-jump="36.2" data-pause="true">Sleep</button>
+        <button type="button" data-jump="0" data-pause="false" id="v-parts">Parts</button>
+        <button type="button" data-jump="15.8" data-pause="true" id="v-folded">Folded</button>
+        <button type="button" data-jump="31.4" data-pause="true" id="v-picnic">Picnic</button>
+        <button type="button" data-jump="36.2" data-pause="true" id="v-sleep">Sleep</button>
       </div>
 
       <div class="transport">
@@ -49,8 +49,8 @@
         </div>
         <span id="clock">0:00</span>
         <button type="button" id="speed" class="ghost">1×</button>
-        <label class="toggle"><input type="checkbox" id="labelsOn" /> Labels</label>
-        <label class="toggle"><input type="checkbox" id="bootOn" checked /> Boot</label>
+        <label class="toggle"><input type="checkbox" id="labelsOn" /> <span id="v-labels">Labels</span></label>
+        <label class="toggle"><input type="checkbox" id="bootOn" checked /> <span id="v-boot">Boot</span></label>
       </div>
     </footer>
   </div>
@@ -61,6 +61,7 @@
   </div>
 
   <script src="vendor/three.min.js"></script>
+  <script src="../site/i18n.js"></script>
   <script src="sleep-pack.js"></script>
 </body>
 </html>

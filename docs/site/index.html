@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Duster II Sleep Pack — workshop plan</title>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <a class="skip" href="#start">Skip to content</a>
+
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <p class="brand" data-i18n="brand">Duster II Sleep Pack</p>
+        <p class="tag" data-i18n="tag"></p>
+      </div>
+      <div class="top-tools">
+        <div class="seg" role="group" aria-label="Language">
+          <button type="button" id="lang-en" class="on">EN</button>
+          <button type="button" id="lang-ca">CA</button>
+        </div>
+        <div class="seg" role="group" aria-label="Units">
+          <button type="button" id="u-mm" class="on" data-i18n="unitsMm">mm</button>
+          <button type="button" id="u-cm" data-i18n="unitsCm">cm</button>
+        </div>
+        <button type="button" class="print" id="print" data-i18n="print">Print list</button>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#start" data-i18n="navStart">What it is</a>
+      <a href="#see" data-i18n="navSee">3D</a>
+      <a href="#fit" data-i18n="navFit">Measure</a>
+      <a href="#buy" data-i18n="navBuy">Buy</a>
+      <a href="#cut" data-i18n="navCut">Cut</a>
+      <a href="#make" data-i18n="navMake">Build</a>
+      <a href="#use" data-i18n="navUse">Use</a>
+      <a href="#safe" data-i18n="navSafe">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="start" class="hero">
+      <p class="kicker" data-i18n="heroKicker"></p>
+      <h1 data-i18n="heroH"></h1>
+      <p class="lead" data-i18n="heroP"></p>
+      <div class="cta">
+        <a class="btn primary" href="#see" data-i18n="heroCtaSee"></a>
+        <a class="btn" href="#fit" data-i18n="heroCtaFit"></a>
+        <a class="btn" href="#buy" data-i18n="heroCtaBuy"></a>
+      </div>
+
+      <div class="modes">
+        <article class="mode">
+          <svg class="glyph-svg" viewBox="0 0 160 72" aria-hidden="true">
+            <rect x="38" y="22" width="84" height="36" rx="3" fill="#d8c09a" stroke="#5a4030"/>
+            <rect x="42" y="14" width="76" height="10" rx="2" fill="#c9a87a" stroke="#5a4030"/>
+            <rect x="18" y="56" width="124" height="4" fill="#c4b496"/>
+          </svg>
+          <h2 data-i18n="modeDriveT"></h2>
+          <p data-i18n="modeDriveD"></p>
+        </article>
+        <article class="mode">
+          <svg class="glyph-svg" viewBox="0 0 160 72" aria-hidden="true">
+            <rect x="48" y="16" width="64" height="40" rx="3" fill="#d8c09a" stroke="#5a4030"/>
+            <rect x="14" y="44" width="50" height="10" rx="2" fill="#c9a87a" stroke="#5a4030"/>
+            <rect x="18" y="56" width="124" height="4" fill="#c4b496"/>
+          </svg>
+          <h2 data-i18n="modePicnicT"></h2>
+          <p data-i18n="modePicnicD"></p>
+        </article>
+        <article class="mode">
+          <svg class="glyph-svg" viewBox="0 0 160 72" aria-hidden="true">
+            <rect x="28" y="28" width="104" height="12" rx="2" fill="#c9a87a" stroke="#5a4030"/>
+            <rect x="14" y="28" width="16" height="12" rx="1" fill="#b7d2be" stroke="#2f5d3a"/>
+            <rect x="130" y="28" width="16" height="12" rx="1" fill="#b7d2be" stroke="#2f5d3a"/>
+            <rect x="28" y="42" width="36" height="16" fill="#d8c09a" stroke="#5a4030"/>
+            <rect x="18" y="58" width="124" height="4" fill="#c4b496"/>
+          </svg>
+          <h2 data-i18n="modeSleepT"></h2>
+          <p data-i18n="modeSleepD"></p>
+        </article>
+      </div>
+
+      <h2 class="facts-h" data-i18n="factsH"></h2>
+      <dl class="facts">
+        <div><dt data-i18n="factBox"></dt><dd data-i18n="factBoxV"></dd></div>
+        <div><dt data-i18n="factBed"></dt><dd data-i18n="factBedV"></dd></div>
+        <div><dt data-i18n="factWood"></dt><dd data-i18n="factWoodV"></dd></div>
+        <div><dt data-i18n="factTime"></dt><dd data-i18n="factTimeV"></dd></div>
+        <div><dt data-i18n="factCost"></dt><dd data-i18n="factCostV"></dd></div>
+        <div><dt data-i18n="factOfficial"></dt><dd data-i18n="factOfficialV"></dd></div>
+      </dl>
+    </section>
+
+    <section id="see">
+      <h2 data-i18n="seeH"></h2>
+      <p data-i18n="seeP"></p>
+      <div class="stage">
+        <iframe id="viewer" title="3D assembly" src="../viewer/index.html"></iframe>
+      </div>
+      <p class="fine"><a href="../viewer/index.html" data-i18n="seeOpen"></a> · <span data-i18n="seeHint"></span></p>
+    </section>
+
+    <section id="fit">
+      <h2 data-i18n="fitH"></h2>
+      <p data-i18n="fitP"></p>
+      <div class="how">
+        <p><strong data-i18n="fitHow"></strong></p>
+        <p data-i18n="fitHow1"></p>
+        <p data-i18n="fitHow2"></p>
+      </div>
+
+      <form id="fit-form" class="measure">
+        <div class="m-head">
+          <span data-i18n="fitId"></span>
+          <span data-i18n="fitWhat"></span>
+          <span class="need-h" data-i18n="fitNeed"></span>
+          <span data-i18n="fitYou"></span>
+          <span data-i18n="fitOk"></span>
+        </div>
+        <label class="m-row">
+          <span class="id">A</span>
+          <span data-i18n="fitA"></span>
+          <span class="need" data-need-mm="960"></span>
+          <input name="A" inputmode="decimal" autocomplete="off" />
+          <span class="lamp" aria-live="polite"></span>
+        </label>
+        <label class="m-row">
+          <span class="id">B</span>
+          <span data-i18n="fitB"></span>
+          <span class="need" data-need-mm="820"></span>
+          <input name="B" inputmode="decimal" autocomplete="off" />
+          <span class="lamp"></span>
+        </label>
+        <label class="m-row">
+          <span class="id">G</span>
+          <span data-i18n="fitG"></span>
+          <span class="need" data-need-mm="330"></span>
+          <input name="G" inputmode="decimal" autocomplete="off" />
+          <span class="lamp"></span>
+        </label>
+        <label class="m-row">
+          <span class="id">C</span>
+          <span data-i18n="fitC"></span>
+          <span class="need" data-need-mm="1900"></span>
+          <input name="C" inputmode="decimal" autocomplete="off" />
+          <span class="lamp"></span>
+        </label>
+        <label class="m-row">
+          <span class="id">W1</span>
+          <span data-i18n="fitW"></span>
+          <span class="need" data-need-mm="1320"></span>
+          <input name="W1" inputmode="decimal" autocomplete="off" />
+          <span class="lamp"></span>
+        </label>
+        <p class="fine" data-i18n="fitHint"></p>
+        <div class="cta">
+          <button type="submit" class="btn primary" data-i18n="fitGo"></button>
+          <button type="button" class="btn" id="fit-clear" data-i18n="fitClear"></button>
+        </div>
+      </form>
+
+      <div id="verdict" class="verdict wait" data-i18n="fitWait"></div>
+      <div id="advice" class="advice" hidden>
+        <h3 data-i18n="fitAdvice"></h3>
+        <ul id="advice-list"></ul>
+      </div>
+    </section>
+
+    <section id="buy">
+      <h2 data-i18n="buyH"></h2>
+      <aside class="say">
+        <p class="say-k" data-i18n="buySay"></p>
+        <p data-i18n="buySayT"></p>
+      </aside>
+      <p class="tick-meta"><span id="shop-count">0</span> / <span id="shop-total">0</span> <span data-i18n="buyDone"></span> · <span data-i18n="saved"></span></p>
+      <div id="shop"></div>
+      <p class="total"><strong data-i18n="buyTotal"></strong> — <span data-i18n="buyTotalV"></span></p>
+    </section>
+
+    <section id="cut">
+      <h2 data-i18n="cutH"></h2>
+      <p data-i18n="cutP"></p>
+      <div class="cta">
+        <a class="btn" href="../../cad/export/all-parts.svg" data-i18n="cutOpen"></a>
+        <a class="btn" href="../../cad/export/sheet-1.svg" data-i18n="cutSheet"></a>
+      </div>
+      <div id="cuts"></div>
+    </section>
+
+    <section id="make">
+      <h2 data-i18n="makeH"></h2>
+      <ol class="jobs">
+        <li><h3 data-i18n="make0T"></h3><p data-i18n="make0D"></p></li>
+        <li><h3 data-i18n="make1T"></h3><p data-i18n="make1D"></p></li>
+        <li><h3 data-i18n="make2T"></h3><p data-i18n="make2D"></p></li>
+        <li><h3 data-i18n="make3T"></h3><p data-i18n="make3D"></p></li>
+        <li><h3 data-i18n="make4T"></h3><p data-i18n="make4D"></p></li>
+        <li><h3 data-i18n="make5T"></h3><p data-i18n="make5D"></p></li>
+      </ol>
+    </section>
+
+    <section id="use">
+      <h2 data-i18n="useH"></h2>
+      <ol class="steps">
+        <li data-i18n="use1"></li>
+        <li data-i18n="use2"></li>
+        <li data-i18n="use3"></li>
+        <li data-i18n="use4"></li>
+        <li data-i18n="use5"></li>
+        <li data-i18n="use6"></li>
+        <li data-i18n="use7"></li>
+        <li data-i18n="use8"></li>
+        <li data-i18n="use9"></li>
+      </ol>
+      <p class="note" data-i18n="useBack"></p>
+      <p class="note" data-i18n="useTable"></p>
+    </section>
+
+    <section id="safe">
+      <h2 data-i18n="safeH"></h2>
+      <ul class="safe">
+        <li data-i18n="safe1"></li>
+        <li data-i18n="safe2"></li>
+        <li data-i18n="safe3"></li>
+        <li data-i18n="safe4"></li>
+        <li data-i18n="safe5"></li>
+        <li data-i18n="safe6"></li>
+      </ul>
+
+      <h2 data-i18n="moreH"></h2>
+      <div class="more">
+        <article><h3 data-i18n="more1T"></h3><p data-i18n="more1D"></p></article>
+        <article><h3 data-i18n="more2T"></h3><p data-i18n="more2D"></p></article>
+        <article><h3 data-i18n="more3T"></h3><p data-i18n="more3D"></p></article>
+        <article><h3 data-i18n="more4T"></h3><p data-i18n="more4D"></p></article>
+        <article><h3 data-i18n="more5T"></h3><p data-i18n="more5D"></p></article>
+        <article><h3 data-i18n="more6T"></h3><p data-i18n="more6D"></p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" data-i18n="foot"></footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
