@@ -95,6 +95,13 @@
     refreshViewer();
     fillSavedMeasures();
     updateNeedPlaceholders();
+    bindSlideshows();
+    document.querySelectorAll(".slides").forEach((root) => {
+      const on = root.querySelector(":scope > .slide.on");
+      const cap = root.querySelector(".slide-cap span");
+      const slides = root.querySelectorAll(":scope > .slide");
+      if (cap) cap.textContent = on === slides[1] ? t("slideReal") : t("slidePlan");
+    });
   }
 
   function updateNeedPlaceholders() {
@@ -155,15 +162,15 @@
   }
 
   function partSvg(p) {
-    const VW = 280;
-    const VH = 168;
-    const left = 36;
-    const top = 10;
-    const right = 12;
-    const bot = 28;
+    const VW = 300;
+    const VH = 188;
+    const left = 52;
+    const top = 14;
+    const right = 14;
+    const bot = 32;
     const max = Math.max(p.w, p.h);
     const dw = Math.max(16, ((VW - left - right) * p.w) / max);
-    const dh = Math.max(10, ((VH - top - bot) * p.h) / max);
+    const dh = Math.max(12, ((VH - top - bot) * p.h) / max);
     const x = left + (VW - left - right - dw) / 2;
     const y = top + (VH - top - bot - dh) / 2;
     const sx = dw / p.w;
@@ -192,6 +199,8 @@
     }).join("");
     const dimW = fmtLen(p.w);
     const dimH = fmtLen(p.h);
+    const hx = x - 22;
+    const hy = y + dh / 2;
     return (
       "<svg class='part-svg' viewBox='0 0 " + VW + " " + VH + "' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
       "<defs><linearGradient id='g-" + uid + "' x1='0' y1='0' x2='0' y2='1'>" +
@@ -204,11 +213,11 @@
       "<line x1='" + x + "' y1='" + (y + dh + 10) + "' x2='" + (x + dw) + "' y2='" + (y + dh + 10) + "' stroke='#5c5146' stroke-width='1'/>" +
       "<line x1='" + x + "' y1='" + (y + dh + 6) + "' x2='" + x + "' y2='" + (y + dh + 14) + "' stroke='#5c5146'/>" +
       "<line x1='" + (x + dw) + "' y1='" + (y + dh + 6) + "' x2='" + (x + dw) + "' y2='" + (y + dh + 14) + "' stroke='#5c5146'/>" +
-      "<text x='" + (x + dw / 2) + "' y='" + (y + dh + 22) + "' text-anchor='middle' fill='#1f1a14' font-size='11' font-family='Segoe UI,sans-serif'>" + dimW + "</text>" +
-      "<line x1='" + (x - 10) + "' y1='" + y + "' x2='" + (x - 10) + "' y2='" + (y + dh) + "' stroke='#5c5146' stroke-width='1'/>" +
-      "<line x1='" + (x - 14) + "' y1='" + y + "' x2='" + (x - 6) + "' y2='" + y + "' stroke='#5c5146'/>" +
-      "<line x1='" + (x - 14) + "' y1='" + (y + dh) + "' x2='" + (x - 6) + "' y2='" + (y + dh) + "' stroke='#5c5146'/>" +
-      "<text x='" + (x - 16) + "' y='" + (y + dh / 2 + 4) + "' text-anchor='end' fill='#1f1a14' font-size='11' font-family='Segoe UI,sans-serif'>" + dimH + "</text>" +
+      "<text x='" + (x + dw / 2) + "' y='" + (y + dh + 24) + "' text-anchor='middle' fill='#1f1a14' font-size='13' font-weight='600' font-family='Segoe UI,sans-serif'>" + dimW + "</text>" +
+      "<line x1='" + (x - 12) + "' y1='" + y + "' x2='" + (x - 12) + "' y2='" + (y + dh) + "' stroke='#5c5146' stroke-width='1'/>" +
+      "<line x1='" + (x - 16) + "' y1='" + y + "' x2='" + (x - 8) + "' y2='" + y + "' stroke='#5c5146'/>" +
+      "<line x1='" + (x - 16) + "' y1='" + (y + dh) + "' x2='" + (x - 8) + "' y2='" + (y + dh) + "' stroke='#5c5146'/>" +
+      "<text x='" + hx + "' y='" + hy + "' text-anchor='middle' dominant-baseline='middle' fill='#1f1a14' font-size='13' font-weight='600' font-family='Segoe UI,sans-serif' transform='rotate(-90 " + hx + " " + hy + ")'>" + dimH + "</text>" +
       "</svg>"
     );
   }
@@ -227,10 +236,17 @@
       box.innerHTML = "<h3>" + g.title + "</h3><div class='cut-grid'></div>";
       const grid = box.querySelector(".cut-grid");
       window.PARTS.filter((p) => p.g === g.id).forEach((p) => {
+        const photo = g.id === "box" ? "product-drive.png" : g.id === "deck" ? "product-sleep.png" : "product-picnic.png";
         const card = document.createElement("article");
         card.className = "cut-card " + p.g + (p.feat === "wing" ? " wing" : "");
         card.innerHTML =
-          partSvg(p) +
+          "<div class='slides'>" +
+          "<div class='slide on'>" + partSvg(p) + "</div>" +
+          "<div class='slide'><img src='img/" + photo + "' alt='' width='640' height='480'/></div>" +
+          "<button type='button' class='slide-btn prev' aria-label='Previous'>‹</button>" +
+          "<button type='button' class='slide-btn next' aria-label='Next'>›</button>" +
+          "<p class='slide-cap'><span>" + t("slidePlan") + "</span></p>" +
+          "</div>" +
           "<div class='name'>" + p.id + "  ×" + p.qty + "</div>" +
           "<div class='size'>" + fmtLen(p.w) + " × " + fmtLen(p.h) + " × 15 mm</div>" +
           "<div class='note'>" + (lang === "ca" ? p.ca : p.en) + "</div>";
@@ -382,6 +398,31 @@
     links.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + cur.id));
   }
   window.addEventListener("scroll", spy, { passive: true });
+
+  function bindSlideshows() {
+    document.querySelectorAll(".slides").forEach((root) => {
+      if (root.dataset.bound === "1") return;
+      root.dataset.bound = "1";
+      const slides = [...root.querySelectorAll(":scope > .slide")];
+      const cap = root.querySelector(".slide-cap span");
+      let i = slides.findIndex((s) => s.classList.contains("on"));
+      if (i < 0) i = 0;
+      function show(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach((s, k) => s.classList.toggle("on", k === i));
+        if (cap) cap.textContent = i === 0 ? t("slidePlan") : t("slideReal");
+      }
+      const prev = root.querySelector(".prev");
+      const next = root.querySelector(".next");
+      if (prev) prev.addEventListener("click", (e) => { e.stopPropagation(); show(i - 1); });
+      if (next) next.addEventListener("click", (e) => { e.stopPropagation(); show(i + 1); });
+      root.addEventListener("click", (e) => {
+        if (e.target.closest(".slide-btn")) return;
+        show(i + 1);
+      });
+      show(i);
+    });
+  }
 
   applyI18n();
   spy();

@@ -20,12 +20,13 @@ window.I18N = {
     navSafe: "Safety",
 
     heroKicker: "No drilling the car · two plywood sheets · about €200–380",
-    heroH: "Show this to the person with the saw.",
     heroP: "Dacia Duster II (2018–2024), 4x2. Official factory pack is for the newer Duster III and will not drop in. This clone keeps the same sleep size: 190 × 95 cm in the boot, 130 cm at the rear doors.",
     heroCtaSee: "Watch it fold",
     heroCtaFit: "Check my boot",
     heroCtaBuy: "Shopping list",
 
+    slidePlan: "Drawing",
+    slideReal: "Product",
     modeDriveT: "Drive",
     modeDriveD: "Box in the boot. Five seats. Strap it to the factory hooks. Shelf back on if it fits.",
     modePicnicT: "Picnic",
@@ -217,12 +218,13 @@ window.I18N = {
     navSafe: "Seguretat",
 
     heroKicker: "Sense foradar el cotxe · dues planxes de contraplacat · uns 200–380 €",
-    heroH: "Això ho ensenyes a qui té la serra.",
     heroP: "Dacia Duster II (2018–2024), 4x2. El pack oficial de fàbrica és del Duster III nou i no hi entra. Aquesta còpia manté la mida de dormir: 190 × 95 cm al maleter, 130 cm a les portes del darrere.",
     heroCtaSee: "Mira com es plega",
     heroCtaFit: "Comprova el maleter",
     heroCtaBuy: "Llista de la compra",
 
+    slidePlan: "Plànol",
+    slideReal: "Producte",
     modeDriveT: "Conduir",
     modeDriveD: "Caixa al maleter. Cinc seients. Cintes als ganxos de fàbrica. Safata al seu lloc si hi cap.",
     modePicnicT: "Pícnic",
