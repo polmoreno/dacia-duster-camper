@@ -154,7 +154,10 @@
     return { fill: "#d8c09a", stroke: "#5a4030", grain: "#b8956a" };
   }
 
-  const REF_PHOTO = "plywood-birch.jpg";
+  const REF_PHOTO = {
+    wood: "plywood-birch.jpg",
+    SLAT_SOCKET: "joist-hanger.jpg",
+  };
 
   function partSvg(p) {
     const VW = 300;
@@ -229,7 +232,8 @@
       box.innerHTML = "<h3>" + g.title + "</h3><div class='cut-grid'></div>";
       const grid = box.querySelector(".cut-grid");
       window.PARTS.filter((p) => p.g === g.id).forEach((p) => {
-        const photo = REF_PHOTO;
+        const isSteel = p.id === "SLAT_SOCKET";
+        const photo = isSteel ? REF_PHOTO.SLAT_SOCKET : REF_PHOTO.wood;
         const card = document.createElement("article");
         card.className = "cut-card " + p.g + (p.feat === "wing" ? " wing" : "");
         card.innerHTML =
@@ -239,12 +243,14 @@
           partSvg(p) +
           "</figure>" +
           "<figure class='photo'>" +
-          "<figcaption>" + t("cutLook") + "</figcaption>" +
+          "<figcaption>" + t(isSteel ? "cutLookSteel" : "cutLook") + "</figcaption>" +
           "<img src='img/ref/" + photo + "' alt='" + p.id + "' width='640' height='400'/>" +
           "</figure>" +
           "</div>" +
           "<div class='name'>" + p.id + "  ×" + p.qty + "</div>" +
-          "<div class='size'>" + fmtLen(p.w) + " × " + fmtLen(p.h) + " × 15 mm</div>" +
+          "<div class='size'>" + (isSteel
+            ? t("cutSteelSize")
+            : fmtLen(p.w) + " × " + fmtLen(p.h) + " × 15 mm") + "</div>" +
           "<div class='note'>" + (lang === "ca" ? p.ca : p.en) + "</div>";
         grid.appendChild(card);
       });

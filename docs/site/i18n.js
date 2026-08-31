@@ -27,6 +27,8 @@ window.I18N = {
 
     cutDraw: "Drawing",
     cutLook: "The wood",
+    cutLookSteel: "Steel",
+    cutSteelSize: "Buy U-brackets, or cut 40 × 90 × 15 mm",
     modeDriveT: "Drive",
     modeDriveD: "Box in the boot. Five seats. Strap it to the factory hooks. Shelf back on if it fits.",
     modePicnicT: "Picnic",
@@ -137,10 +139,10 @@ window.I18N = {
     buyDone: "ticked",
 
     cutH: "Every plywood piece — say these sizes out loud",
-    cutP: "Same wood for every piece: 15 mm birch plywood, two sheets. Qty × width × height. The photo is that sheet. The shop can also cut from the two nest drawings (sheet-1 and sheet-2).",
+    cutP: "The boards are all the same 15 mm birch plywood, two sheets. SLAT_SOCKET is the exception: buy steel U-brackets, or cut four small U’s from leftover ply. The shop can also cut from the two nest drawings (sheet-1 and sheet-2).",
     cutOpen: "Open the drawing with all parts",
     cutSheet: "Open the two nest sheets (what the saw should follow)",
-    cutCredit: "15 mm birch plywood photo: Wikimedia Commons / Bystander, CC BY-SA 3.0.",
+    cutCredit: "Photos: Wikimedia Commons — birch plywood (Bystander, CC BY-SA 3.0); joist hangers (Sarang, public domain).",
     cutGroupBox: "The box",
     cutGroupDeck: "The bed lids",
     cutGroupFrame: "The rails and legs",
@@ -226,6 +228,8 @@ window.I18N = {
 
     cutDraw: "Plànol",
     cutLook: "La fusta",
+    cutLookSteel: "Acer",
+    cutSteelSize: "Compra gatells en U, o talla 40 × 90 × 15 mm",
     modeDriveT: "Conduir",
     modeDriveD: "Caixa al maleter. Cinc seients. Cintes als ganxos de fàbrica. Safata al seu lloc si hi cap.",
     modePicnicT: "Pícnic",
@@ -336,10 +340,10 @@ window.I18N = {
     buyDone: "fet",
 
     cutH: "Totes les peces de contraplacat — digues les mides en veu alta",
-    cutP: "La mateixa fusta a totes les peces: contraplacat de bedoll de 15 mm, dues planxes. Quantitat × ample × alt. La foto és aquesta planxa. El taller també pot tallar a partir dels dos plànols (sheet-1 i sheet-2).",
+    cutP: "Els taulers són tots el mateix contraplacat de bedoll de 15 mm, dues planxes. L’excepció és el SLAT_SOCKET: compra gatells en U d’acer, o talla quatre U petites del retall. El taller també pot tallar a partir dels dos plànols (sheet-1 i sheet-2).",
     cutOpen: "Obre el dibuix amb totes les peces",
     cutSheet: "Obre els dos plànols de niu (el que ha de seguir el serra)",
-    cutCredit: "Foto del contraplacat de bedoll 15 mm: Wikimedia Commons / Bystander, CC BY-SA 3.0.",
+    cutCredit: "Fotos: Wikimedia Commons — contraplacat de bedoll (Bystander, CC BY-SA 3.0); gatells (Sarang, domini públic).",
     cutGroupBox: "La caixa",
     cutGroupDeck: "Les tapes del llit",
     cutGroupFrame: "Rails i potes",
