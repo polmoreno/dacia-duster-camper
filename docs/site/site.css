@@ -198,66 +198,10 @@ h3 { font-size: 22px; margin: 0 0 8px; }
 .glyph-svg {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 140px;
+  height: 76px;
+  margin-bottom: 12px;
   background: #efe6d4;
-}
-
-.slides {
-  position: relative;
-  margin: 0 0 12px;
   border-radius: 10px;
-  overflow: hidden;
-  background: #efe6d4;
-  cursor: pointer;
-  min-height: 140px;
-}
-
-.cut-card .slides { min-height: 168px; }
-
-.slide { display: none; }
-.slide.on { display: block; }
-
-.slide img {
-  display: block;
-  width: 100%;
-  height: 168px;
-  object-fit: cover;
-}
-
-.mode .slide img { height: 168px; }
-
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(31, 26, 20, 0.72);
-  color: #fffaf1;
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.slide-btn.prev { left: 8px; }
-.slide-btn.next { right: 8px; }
-
-.slide-cap {
-  position: absolute;
-  left: 10px;
-  bottom: 8px;
-  margin: 0;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(31, 26, 20, 0.72);
-  color: #fffaf1;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  pointer-events: none;
 }
 
 .facts-h { margin-top: 12px; }
@@ -409,8 +353,43 @@ h3 { font-size: 22px; margin: 0 0 8px; }
 
 .cut-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 14px;
+}
+
+.cut-pair {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.cut-pair figure {
+  margin: 0;
+  background: #efe6d4;
+  border-radius: 10px;
+  overflow: visible;
+  min-height: 0;
+}
+
+.cut-pair figure.photo {
+  overflow: hidden;
+}
+
+.cut-pair figcaption {
+  margin: 0;
+  padding: 6px 8px 0;
+  color: var(--mute);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cut-pair img {
+  display: block;
+  width: 100%;
+  height: 148px;
+  object-fit: cover;
 }
 
 .cut-card {
@@ -422,12 +401,7 @@ h3 { font-size: 22px; margin: 0 0 8px; }
   width: 100%;
   height: auto;
   overflow: visible;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #efe6d4 0 12px,
-      #eadcc4 12px 13px
-    );
+  background: transparent;
   border: 0;
   border-radius: 0;
   margin: 0;
@@ -497,6 +471,7 @@ h3 { font-size: 22px; margin: 0 0 8px; }
 
 @media (max-width: 800px) {
   .modes, .facts, .more { grid-template-columns: 1fr; }
+  .cut-pair { grid-template-columns: 1fr; }
   .top-inner { flex-direction: column; }
   .m-head { display: none; }
   .m-row {
@@ -514,7 +489,6 @@ h3 { font-size: 22px; margin: 0 0 8px; }
 }
 
 @media print {
-  .slide-btn, .slide-cap { display: none !important; }
   .top, .cta, .stage, .skip { display: none !important; }
   body { background: #fff; font-size: 12pt; }
   section { break-inside: avoid; border: 0; }
