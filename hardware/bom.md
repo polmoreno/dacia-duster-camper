@@ -6,14 +6,14 @@ Cadena 88 web matches (Aug 2026):
 
 | Need | Cadena 88 product | Link |
 | --- | --- | --- |
-| Edge band 22 mm | Canto melamina EHL 5 m × 22 mm (~4,60 €) | [cantos](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/cantos-para-tablero) |
-| Piano hinge | Bisagra piano EHL en tiras (from ~1,95 €) | [piano](https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras-de-piano) |
-| Leg hinges | Bisagra EHL 207 / butts | [bisagras](https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras) |
-| Table bolts | Pasador cerrojo EHL | [pasadores](https://www.cadena88.com/es/cerrajeria/pasadores-candados-y-cierrapuertas/pasadores-y-pestillos-para-puertas/pasadores-y-pestillos) |
-| Wing runners | Guía metálica EUROLATON **500 mm** (~4,50 € / pair, 45 kg) | [guías](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/complementos-para-muebles/guia-metalica-eurolaton-cajones) |
-| Corner brackets | Escuadras EHL 40 mm (from ~2,00 €) | [escuadras](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/pletinas-y-escuadras-de-ensamblaje) |
-| Glue | Cola blanca CEYS 500 g (~6,60 €) or RAYT 1 kg | [colas](https://www.cadena88.com/es/fijaciones-y-adhesivos/adhesivos-colas-y-cintas/colas-blancas) |
-| Screws | SPAX / EHS chipboard 4×40 and 3.5×20 | [SPAX](https://www.cadena88.com/es/marcas/spax) |
+| Edge band 22 mm | Canto melamina EHL 5 m × 22 mm, SKU 111D2283 (~4,60 €) | [producte](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/cantos-para-tablero/canto-melamina-ehl-5-m-x-22-mm) |
+| Piano hinge | Bisagra piano niquelada EHL 32 × 1020 mm, SKU 111D383 (~4,10 €) | [producte](https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras-de-piano/bisagra-piano-niquelada-ehl-en-tiras) |
+| Leg hinges | Bisagra EHL 207, pack de 4, 40 × 35 mm, SKU 111D315 (~4,40 €) | [producte](https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras/bisagra-ehl-modelo-207) |
+| Table bolts | Pasador cerrojo EHL bicromatado 70 mm, SKU 111D313 (~4,15 €) | [producte](https://www.cadena88.com/es/cerrajeria/pasadores-candados-y-cierrapuertas/pasadores-y-pestillos-para-puertas/pasadores-y-pestillos/pasador-cerrojo-ehl-bicromatado) |
+| Wing runners | Guía metálica EUROLATON **500 mm** (~4,50 € / pair, 45 kg) | [producte](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/complementos-para-muebles/guia-metalica-eurolaton-cajones) |
+| Corner brackets | Escuadras EHL punta redonda 40 × 40 mm, SKU 111D12-26 (from ~2,00 €) | [producte](https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/pletinas-y-escuadras-de-ensamblaje/escuadras-ehl-punta-redonda-bricomatadas) |
+| Glue | Cola blanca rápida CEYS 500 g, SKU 4572B59 (~6,60 €) | [producte](https://www.cadena88.com/es/fijaciones-y-adhesivos/adhesivos-colas-y-cintas/colas-blancas/adhesivo-cola-blanca-rapida-ceys-500-gr) |
+| Screws | SPAX CP Wirox chipboard — pick 4×40 and 3.5×20 on the same page | [producte](https://www.cadena88.com/es/fijaciones-y-adhesivos/tornillos-tacos-y-clavos/tornillos-y-tirafondos/tornillos-rosca-madera/tornillo-aglomerado-spax-cp-wirox-z2-tr) |
 
 **Ask at the shop (not on the website):** 15 mm birch/phenolic 2440 × 1220, pine 20×20 cleat, felt pads, table stays, cam-buckle straps, foam mattress. Do not buy the Emuca 30 mm table tops.
 

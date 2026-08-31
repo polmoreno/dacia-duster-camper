@@ -6,22 +6,22 @@
   const SHOP = [
     { g: "buyWood", items: [
       { id: "ply", t: "buyPly", n: "buyPlyN" },
-      { id: "band", t: "buyBand", n: "buyBandN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/cantos-para-tablero" },
+      { id: "band", t: "buyBand", n: "buyBandN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/cantos-para-tablero/canto-melamina-ehl-5-m-x-22-mm" },
       { id: "felt", t: "buyFelt", n: "buyFeltN" },
       { id: "cleat", t: "buyCleat", n: "buyCleatN" },
     ]},
     { g: "buyHw", items: [
-      { id: "h1", t: "buyHinge1", n: "buyHinge1N", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras-de-piano" },
-      { id: "butt", t: "buyButt", n: "buyButtN", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras" },
+      { id: "h1", t: "buyHinge1", n: "buyHinge1N", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras-de-piano/bisagra-piano-niquelada-ehl-en-tiras" },
+      { id: "butt", t: "buyButt", n: "buyButtN", url: "https://www.cadena88.com/es/cerrajeria/accesorios-puertas-y-ventanas/bisagras-y-pernios/bisagras/bisagra-ehl-modelo-207" },
       { id: "stay", t: "buyStay", n: "buyStayN" },
-      { id: "bolt", t: "buyBolt", n: "buyBoltN", url: "https://www.cadena88.com/es/cerrajeria/pasadores-candados-y-cierrapuertas/pasadores-y-pestillos-para-puertas/pasadores-y-pestillos" },
+      { id: "bolt", t: "buyBolt", n: "buyBoltN", url: "https://www.cadena88.com/es/cerrajeria/pasadores-candados-y-cierrapuertas/pasadores-y-pestillos-para-puertas/pasadores-y-pestillos/pasador-cerrojo-ehl-bicromatado" },
       { id: "slide", t: "buySlide", n: "buySlideN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/complementos-para-muebles/guia-metalica-eurolaton-cajones" },
     ]},
     { g: "buyFast", items: [
-      { id: "s1", t: "buyScr1", n: "buyScr1N", url: "https://www.cadena88.com/es/marcas/spax" },
-      { id: "s2", t: "buyScr2", n: "buyScr2N", url: "https://www.cadena88.com/es/marcas/spax" },
-      { id: "br", t: "buyBrkt", n: "buyBrktN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/pletinas-y-escuadras-de-ensamblaje" },
-      { id: "glue", t: "buyGlue", n: "buyGlueN", url: "https://www.cadena88.com/es/fijaciones-y-adhesivos/adhesivos-colas-y-cintas/colas-blancas" },
+      { id: "s1", t: "buyScr1", n: "buyScr1N", url: "https://www.cadena88.com/es/fijaciones-y-adhesivos/tornillos-tacos-y-clavos/tornillos-y-tirafondos/tornillos-rosca-madera/tornillo-aglomerado-spax-cp-wirox-z2-tr" },
+      { id: "s2", t: "buyScr2", n: "buyScr2N", url: "https://www.cadena88.com/es/fijaciones-y-adhesivos/tornillos-tacos-y-clavos/tornillos-y-tirafondos/tornillos-rosca-madera/tornillo-aglomerado-spax-cp-wirox-z2-tr" },
+      { id: "br", t: "buyBrkt", n: "buyBrktN", url: "https://www.cadena88.com/es/ferreteria/ferreteria-para-muebles/pletinas-y-escuadras-de-ensamblaje/escuadras-ehl-punta-redonda-bricomatadas" },
+      { id: "glue", t: "buyGlue", n: "buyGlueN", url: "https://www.cadena88.com/es/fijaciones-y-adhesivos/adhesivos-colas-y-cintas/colas-blancas/adhesivo-cola-blanca-rapida-ceys-500-gr" },
     ]},
     { g: "buySoft", items: [
       { id: "st", t: "buyStrap", n: "buyStrapN" },
